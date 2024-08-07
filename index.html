@@ -10,35 +10,95 @@
     <br />
     <main>
       <button
-      onclick="
+        onclick="
 
-    let computerMove = Math.random();
-    if(computerMove >= 0 && computerMove<=1/3)
-    {
-        computerMove = 'Rock';
-    }
-    else if(computerMove >= 1/3 && computerMove<=2/3)
-    {
-        computerMove = 'Paper';
-    }
-    else if(computerMove >= 2/3 && computerMove<=1)
-    {
-        computerMove = 'Scissor';
-    }
+    let moveComputer = computerMove();
+    let result = '';
     
     
+    if(moveComputer==='Rock')
+    {
+        result = 'Tie'
+    }
+    if(moveComputer==='Paper')
+    {
+        result = 'Win'
+    }
+    if(moveComputer==='Scissor')
+    {
+        result = 'Lose'
+    } 
 
-
-    console.log(computerMove)
-    alert(`You picked rock. computer picked ${computerMove}. You lose`);
+    
+    console.log(moveComputer)
+    alert(`You picked rock. computer picked ${moveComputer}. You ${result}`);
     "
       >
         Rock
       </button>
 
-      <button>Paper</button>
+      <button onclick="
 
-      <button>Scissors</button>
+    moveComputer = computerMove();
+    result = '';
+    
+       
+    if(moveComputer==='Rock')
+    {
+        result = 'Win'
+    }
+    if(moveComputer==='Paper')
+    {
+        result = 'Tie'
+    }
+    if(moveComputer==='Scissor')
+    {
+        result = 'Lose'
+    } 
+    console.log(moveComputer)
+    alert(`You picked Paper. computer picked ${moveComputer}. You ${result}`);
+      
+      ">Paper</button>
+
+      <button onclick="
+
+    moveComputer = computerMove();
+    result = '';
+    
+       
+    if(moveComputer==='Rock')
+    {
+        result = 'Lose'
+    }
+    if(moveComputer==='Paper')
+    {
+        result = 'Win'
+    }
+    if(moveComputer==='Scissor')
+    {
+        result = 'Tie'
+    } 
+    console.log(moveComputer)
+    alert(`You picked Scissor. computer picked ${moveComputer}. You ${result}`);
+      
+      
+      ">Scissors</button>
+
+      <script>
+        function computerMove() {
+          let randomNumber = Math.random();
+          let computerPick = "";
+
+          if (randomNumber >= 0 && randomNumber <= 1 / 3) {
+            computerPick = "Rock";
+          } else if (randomNumber >= 1 / 3 && randomNumber <= 2 / 3) {
+            computerPick = "Paper";
+          } else if (randomNumber >= 2 / 3 && randomNumber <= 1) {
+            computerPick = "Scissor";
+          }
+          return computerPick;
+        }
+      </script>
     </main>
 
     <footer></footer>
