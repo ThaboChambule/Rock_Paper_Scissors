@@ -7,6 +7,33 @@ document
 document
   .querySelector(".js-scissor")
   .addEventListener("click", () => playerMove("Scissor"));
+  
+document.querySelector('.js-auto').addEventListener('click', () => {
+setInterval(() => {
+  playerMove(computerMove())
+},1000);
+})
+
+  
+
+  const score = JSON.parse(localStorage.getItem('score'))
+
+   /*const score = {
+    Wins: 0,
+    Losses: 0,
+    Ties:0
+  }*/
+    document.querySelector(".js-score").addEventListener('click', () => {
+      score.Wins = 0;
+      score.Losses = 0;
+      score.Ties =0
+    })
+  
+
+    
+ 
+
+  
 
 const computerMove = () => {
   const moveComputer = Math.random();
@@ -47,7 +74,28 @@ const playerMove = (playerPick) => {
     result = "Draw";
   }
 
-  alert(
-    `You picked: ${playerPick} Computer picked: ${moveComputer}. You ${result}`
-  );
+  /*This is an if statement to count the score*/
+  if (result==="Win")
+  {
+    score.Wins += 1;
+  }
+  else if (result ==="Lose")
+  {
+    score.Losses += 1;
+  }
+  else if (result === "Draw")
+  {
+    score.Ties += 1;
+  }
+
+  const jsonString = JSON.stringify(score);
+  localStorage.setItem('score', jsonString)
+  
+  const showScore = document.querySelector(".js-display")
+  showScore.innerHTML = `You picked: ${playerPick} Computer picked: ${moveComputer}. You ${result}
+  `
+  const showResult = document.querySelector(".js-result")
+  showResult.innerHTML = `Wins: ${score.Wins} Losses: ${score.Losses} Ties: ${score.Ties}`
+
+
 };
