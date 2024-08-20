@@ -30,11 +30,6 @@ setInterval(() => {
     })
   
 
-    
- 
-
-  
-
 const computerMove = () => {
   const moveComputer = Math.random();
   let result = "";
@@ -99,3 +94,4 @@ const playerMove = (playerPick) => {
 
 
 };
+
