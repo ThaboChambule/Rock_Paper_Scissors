@@ -16,13 +16,14 @@ setInterval(() => {
 
   
 
-  const score = JSON.parse(localStorage.getItem('score'))
+ //const score = JSON.parse(localStorage.getItem('score'))
 
-   /*const score = {
+   const score = {
     Wins: 0,
     Losses: 0,
     Ties:0
-  }*/
+   }
+  
     document.querySelector(".js-score").addEventListener('click', () => {
       score.Wins = 0;
       score.Losses = 0;
