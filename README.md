@@ -18,7 +18,7 @@ Welcome to the Rock Paper Scissors Game project! This is a simple yet engaging g
 ### Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/rock-paper-scissors.git
+   git clone https://github.com/thabochambule/rock-paper-scissors.git
    ```
 2. **Navigate to the Project Directory**:
    ```bash
